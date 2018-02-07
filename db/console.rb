@@ -15,5 +15,8 @@ album1 = Album.new({
 
   album1.save()
 
+  artist1.name = "Liam Gallagher"
+  artist1.update()
+
   binding.pry
   nil
