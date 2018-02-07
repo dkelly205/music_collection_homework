@@ -22,4 +22,11 @@ class Artist
     return artists.map{|artist| Artist.new(artist)}
   end
 
+  def album
+    sql = "SELECT * FROM albums WHERE artist_id = $1"
+    values = [@id]
+    albums = SqlRunner.run(sql, values)
+    return albums.map{|album| Album.new(album)}
+  end
+
 end
